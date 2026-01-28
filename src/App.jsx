@@ -110,20 +110,15 @@ function App() {
           ? filterRows(data, next, COLS_BOTTOM)
           : filterRows(data, next, [...COLS_TOP, ...COLS_BOTTOM]);
 
-      // ✅ 若唯一命中：自動回填整列（A~I）
       if (cand.length === 1) {
         const row = cand[0];
-        for (const k of ALL) next[k] = row[k] ?? "";
-      } else {
-        // 不唯一就不要亂填：中間 D + 另一排先清空，避免顯示錯資料
+      
         if (m === "top") {
-          next["D"] = "";
-          for (const k of COLS_BOTTOM) next[k] = "";
+          // 你正在操作第一排：不要動 A/B/C（避免把 B/C 鎖死）
+          for (const k of ["D", "E", "F", "G", "H", "I"]) next[k] = row[k] ?? "";
         } else if (m === "bottom") {
-          next["D"] = "";
-          for (const k of COLS_TOP) next[k] = "";
-        } else {
-          // none：不處理
+          // 你正在操作第三排：不要動 E/F/G/H/I
+          for (const k of ["A", "B", "C", "D"]) next[k] = row[k] ?? "";
         }
       }
 

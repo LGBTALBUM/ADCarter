@@ -23,6 +23,21 @@ for (const m of merges) {
   }
 }
 
+// 向下填充：空白就沿用上一列（依你的資料習慣選欄位）
+// 常見只需要 A/B/C/D 這種階層欄位
+const FILL_DOWN_COLS = [0, 1, 2, 3, 4, 5, 6, 7, 8]; // A,B,C,D  (需要更多就加到 8)
+
+for (const c of FILL_DOWN_COLS) {
+  for (let r = 1; r < aoa.length; r++) {
+    aoa[r] = aoa[r] || [];
+    const cur = aoa[r][c];
+    const prev = aoa[r - 1]?.[c];
+    if ((cur === "" || cur == null) && (prev !== "" && prev != null)) {
+      aoa[r][c] = prev;
+    }
+  }
+}
+
 // ✅ 你若 Excel 第 1 列是標題列，改成 aoa.slice(1)
 const rows = aoa
   .filter((r) => r.some((cell) => String(cell).trim() !== ""))
