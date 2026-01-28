@@ -170,6 +170,9 @@ function App() {
     <div style={{ maxWidth: 1100, margin: "24px auto", padding: "0 12px", fontFamily: "ui-sans-serif, system-ui" }}>
       <h2 style={{ marginBottom: 8 }}>西元日曆 Carter日曆 轉換工具</h2>
       <div style={{ color: "#666", marginBottom: 12, lineHeight: 1.5 }}>
+        當前可查詢：西元1984年1月1日至2034年12月31日；Carter-23年8月5日DayA至16年9月27日DayB
+      </div>
+      <div style={{ color: "#666", marginBottom: 12, lineHeight: 1.5 }}>
         目前模式：<b>{MODE_TEXT[mode] ?? mode}</b>　|　可查閱筆數：<b>{candidates.length}</b>
         <button onClick={clearAll} style={{ marginLeft: 12, padding: "6px 10px", borderRadius: 10, border: "1px solid #ccc", background: "white", cursor: "pointer" }}>
           清空
