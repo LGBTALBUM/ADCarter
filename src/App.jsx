@@ -165,7 +165,7 @@ function App() {
     <div style={{ maxWidth: 1100, margin: "24px auto", padding: "0 12px", fontFamily: "ui-sans-serif, system-ui" }}>
       <h2 style={{ marginBottom: 8 }}>西元日曆 Carter日曆 轉換工具</h2>
       <div style={{ color: "#666", marginBottom: 12, lineHeight: 1.5 }}>
-        當前可查詢：西元1984年1月1日至2034年12月31日；Carter-23年8月5日DayA至16年9月27日DayB
+        當前可查詢：西元1984年1月1日至2050年12月31日；Carter-23年8月5日DayA至28年9月27日DayB
       </div>
       <div style={{ color: "#666", marginBottom: 12, lineHeight: 1.5 }}>
         目前模式：<b>{MODE_TEXT[mode] ?? mode}</b>　|　可查閱筆數：<b>{candidates.length}</b>
@@ -181,7 +181,7 @@ function App() {
           <Select col="B" disabled={lockTop} />
           <Select col="C" disabled={lockTop} />
         </div>
-        {lockTop && <div style={{ marginTop: 8, color: "#a33", fontSize: 12 }}>當前模式：西元曆法轉Carter曆法</div>}
+        {lockTop && <div style={{ marginTop: 8, color: "#a33", fontSize: 12 }}>當前模式：Carter曆法轉西元曆法</div>}
       </div>
 
       <div style={box}>
@@ -200,7 +200,7 @@ function App() {
           <Select col="H" disabled={lockBottom} />
           <Select col="I" disabled={lockBottom} />
         </div>
-        {lockBottom && <div style={{ marginTop: 8, color: "#a33", fontSize: 12 }}>當前模式：Carter曆法轉西元曆法</div>}
+        {lockBottom && <div style={{ marginTop: 8, color: "#a33", fontSize: 12 }}>當前模式：西元曆法轉Carter曆法</div>}
       </div>
     </div>
   );
