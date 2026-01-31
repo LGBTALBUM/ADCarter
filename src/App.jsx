@@ -17,20 +17,15 @@ const LABELS = {
   I: "Carter日期分字(27日制)",
 };
 const MODE_TEXT = { top: "西元曆法轉Carter曆法", bottom: "Carter曆法轉西元曆法", none: "未選" };
-
+const collator = new Intl.Collator("zh-Hant", {
+  numeric: true,      // ✅ 數字按數值比
+  sensitivity: "base" // ✅ 不區分大小寫/重音
+});
 
 function uniq(arr) {
-  const seen = new Set();
-  const out = [];
-  for (const x of arr) {
-    const s = String(x).trim();
-    if (!s) continue;
-    if (!seen.has(s)) {
-      seen.add(s);
-      out.push(s);
-    }
-  }
-  return out; // ✅ 不 sort
+  return Array.from(
+    new Set(arr.map(x => String(x).trim()).filter(x => x !== ""))
+  ).sort(collator.compare);
 }
 
 function getMode(values) {
@@ -165,7 +160,7 @@ function App() {
     <div style={{ maxWidth: 1100, margin: "24px auto", padding: "0 12px", fontFamily: "ui-sans-serif, system-ui" }}>
       <h2 style={{ marginBottom: 8 }}>西元日曆 Carter日曆 轉換工具</h2>
       <div style={{ color: "#666", marginBottom: 12, lineHeight: 1.5 }}>
-        當前可查詢：西元1984年1月1日至2050年12月31日；Carter-23年8月5日DayA至28年9月27日DayB
+        當前可查詢：西元1964年1月1日至2050年12月31日；Carter-38年8月5日DayA至28年9月27日DayB
       </div>
       <div style={{ color: "#666", marginBottom: 12, lineHeight: 1.5 }}>
         目前模式：<b>{MODE_TEXT[mode] ?? mode}</b>　|　可查閱筆數：<b>{candidates.length}</b>
