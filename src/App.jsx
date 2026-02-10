@@ -160,7 +160,7 @@ function App() {
     <div style={{ maxWidth: 1100, margin: "24px auto", padding: "0 12px", fontFamily: "ui-sans-serif, system-ui" }}>
       <h2 style={{ marginBottom: 8 }}>西元日曆 Carter日曆 轉換工具</h2>
       <div style={{ color: "#666", marginBottom: 12, lineHeight: 1.5 }}>
-        當前可查詢：西元1960年1月1日至2062年12月31日；Carter-41年8月5日DayA至37年9月27日DayB
+        當前可查詢：西元1960年1月1日至2070年12月31日；Carter-41年8月5日DayA至43年9月27日DayB
       </div>
       <div style={{ color: "#666", marginBottom: 12, lineHeight: 1.5 }}>
         目前模式：<b>{MODE_TEXT[mode] ?? mode}</b>　|　可查閱筆數：<b>{candidates.length}</b>
