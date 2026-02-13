@@ -176,7 +176,7 @@ function App() {
           <Select col="B" disabled={lockTop} />
           <Select col="C" disabled={lockTop} />
         </div>
-        {lockTop && <div style={{ marginTop: 8, color: "#a33", fontSize: 12 }}>當前模式：Carter曆法轉西元曆法</div>}
+        {lockTop && <div style={{ marginTop: 8, color: "#a33", fontSize: 12 }}>當前模式：Carter轉西元曆法</div>}
       </div>
 
       <div style={box}>
@@ -195,7 +195,7 @@ function App() {
           <Select col="H" disabled={lockBottom} />
           <Select col="I" disabled={lockBottom} />
         </div>
-        {lockBottom && <div style={{ marginTop: 8, color: "#a33", fontSize: 12 }}>當前模式：西元曆法轉Carter曆法</div>}
+        {lockBottom && <div style={{ marginTop: 8, color: "#a33", fontSize: 12 }}>當前模式：西元轉Carter曆法</div>}
       </div>
     </div>
   );
