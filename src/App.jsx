@@ -14,7 +14,7 @@ const LABELS = {
   F: "Carter月份",
   G: "Carter日期(54日制)",
   H: "Carter日期(27日制)",
-  I: "Carter日期分字(27日制)",
+  I: "DayA/DayB(27日制)",
 };
 const MODE_TEXT = { top: "西元曆法轉Carter曆法", bottom: "Carter曆法轉西元曆法", none: "未選" };
 const collator = new Intl.Collator("zh-Hant", {
